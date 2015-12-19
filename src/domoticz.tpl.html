@@ -1,0 +1,24 @@
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" [ngClass]="{'is-off-canvas-open is-open-left': offCanvasLeftOpen == true}">
+        <div class="off-canvas position-left" [ngClass]="{'is-open': offCanvasLeftOpen == true}" id="offCanvas">
+            <h6 class="columns">Menu</h6>
+            <ul class="menu vertical">
+                <li><a [routerLink]="['Home']" (click)="toggleoffCanvasLeft()">Dashboard</a></li>
+                <li><a [routerLink]="['Devices']" (click)="toggleoffCanvasLeft()">Devices</a></li>
+                <li><a [routerLink]="['Settings']" (click)="toggleoffCanvasLeft()">Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="off-canvas-content">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-icon" type="button" data-open="offCanvasLeft" aria-expanded="false" aria-controls="offCanvasLeft" (click)="toggleoffCanvasLeft()"></button>
+                    <span class="menu-text">Domoticz connect</span>
+                </div>
+                <div class="top-bar-right">
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
