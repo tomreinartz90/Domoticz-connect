@@ -1,4 +1,4 @@
-# domoticz
+# domoticz-connect
 
 Simple description placeholder.
 

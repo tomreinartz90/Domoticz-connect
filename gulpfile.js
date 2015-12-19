@@ -34,6 +34,9 @@ gulp.task('compile-sass', [], function(){
 });
 
 gulp.task('compile-assets', [], function() {
+  gulp.src('node_modules/angular2//**/**').pipe(gulp.dest('dist/angular2/'));
+  gulp.src('node_modules/systemjs/dist/**/**').pipe(gulp.dest('dist/systemjs/dist/'));
+  gulp.src('node_modules/rxjs/**/**').pipe(gulp.dest('dist/rxjs/'));
   gulp.src('src/assets/fonts/**/**').pipe(gulp.dest('dist/assets/fonts'));
   return gulp.src('src/assets/images/**/**').pipe(gulp.dest('dist/assets/images'));
 });

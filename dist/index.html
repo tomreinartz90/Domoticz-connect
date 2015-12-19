@@ -3,31 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>domoticz Application</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Simple Domoticz app build with Angular2 and Foundation">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-  <script>document.write('<base href="' + document.location + '" />');</script>
 
 </head>
-<body>
-  <domoticz></domoticz>
 
-  <script src="systemjs/dist/system.src.js"></script>
-  <script src="angular2/bundles/angular2.dev.js"></script>
-  <script src="angular2/bundles/angular2-polyfills.js"></script>
-  <script src="angular2/bundles/http.dev.js"></script>
-  <script>
-    System.config({
-      packages: {
-        'components': {defaultExtension: 'js'},
-        'filters': {defaultExtension: 'js'},
-        'routes': {defaultExtension: 'js'},
-        'services': {defaultExtension: 'js'},
-        'rxjs': {defaultExtension: 'js'},
-        'angular2': {defaultExtension: 'js'}
-      }
-    });
-    System.import('domoticz.js')
-  </script>
+
+
+<body>
+<domoticz></domoticz>
+
+<script src="systemjs/dist/system.src.js"></script>
+<script src="angular2/bundles/angular2.dev.js"></script>
+<script src="angular2/bundles/angular2-polyfills.js"></script>
+<script src="angular2/bundles/http.dev.js"></script>
+<script>
+  System.config({
+    packages: {
+      'components': {defaultExtension: 'js'},
+      'filters': {defaultExtension: 'js'},
+      'routes': {defaultExtension: 'js'},
+      'services': {defaultExtension: 'js'},
+      'rxjs': {defaultExtension: 'js'},
+      'angular2': {defaultExtension: 'js'}
+    }
+  });
+  System.import('domoticz.js')
+</script>
 </body>
 </html>
