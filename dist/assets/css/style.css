@@ -3203,7 +3203,7 @@ table.hover tr:nth-of-type(even):hover {
   top: 0; }
 
 .page-content {
-  margin-top: 2.5rem; }
+  padding-top: 2.5rem; }
 
 .menu.horizontal {
   background-color: #2199e8;

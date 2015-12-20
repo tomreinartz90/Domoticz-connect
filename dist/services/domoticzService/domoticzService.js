@@ -21,10 +21,11 @@ var DomoticzService = (function () {
     }
     DomoticzService.prototype.getSettingsFromLocalStorage = function () {
         var settings = JSON.parse(localStorage.getItem('settings'));
-        if (settings !== null)
+        if (settings !== null) {
             this.username = settings.username;
-        this.password = settings.password;
-        this.domoticzAdress = settings.url;
+            this.password = settings.password;
+            this.domoticzAdress = settings.url;
+        }
     };
     DomoticzService.prototype.setUserNameAndPassword = function (url, username, password) {
         this.domoticzAdress = url;

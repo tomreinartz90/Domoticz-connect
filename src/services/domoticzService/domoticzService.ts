@@ -23,10 +23,11 @@ export class DomoticzService {
 
     getSettingsFromLocalStorage () {
         var settings = JSON.parse( localStorage.getItem('settings') );
-        if(settings !== null)
+        if(settings !== null) {
             this.username = settings.username;
-        this.password = settings.password;
-        this.domoticzAdress = settings.url;
+            this.password = settings.password;
+            this.domoticzAdress = settings.url;
+        }
     }
 
     setUserNameAndPassword (url:string, username:string, password:string) {
