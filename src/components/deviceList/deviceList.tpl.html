@@ -1,9 +1,9 @@
 <div class="row">
     <!--<h4>Scenes</h4>-->
-    <div *ngFor="#scene of devices" class="small-12 medium-6 large-4 columns device {{scene.Type}} protection-{{scene.Protected}}"  (click)="changeDeviceState(scene)" [hidden]="scene.Type != 'Scene'">
+    <div *ngFor="#scene of devices" class="small-6 medium-6 large-4 columns device {{scene.Type}} protection-{{scene.Protected}}"  (click)="changeDeviceState(scene)" [hidden]="scene.Type != 'Scene'">
         <div class="shadow row">
-            <div class="small-2 columns md-icons icon status-{{scene.Status}} " [hidden]="">{{scene.Image | deviceNameToMDIcon}}</div>
-            <div class="small-10 columns">
+            <div class="small-4 columns md-icons icon status-{{scene.Status}} " [hidden]="">{{scene.Image | deviceNameToMDIcon}}</div>
+            <div class="small-8 columns">
                 <h4 class="name">{{scene.Name}}</h4>
                 <!--<h6 class="last-changed text-right"><small>{{scene.LastUpdate}}</small></h6>-->
             </div>

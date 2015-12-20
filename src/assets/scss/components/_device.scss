@@ -62,10 +62,11 @@
 
 
   &.Scene {
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
     .shadow  {
       background-color: #eeeeee;
       padding: .685rem;
+      border-radius: 0;
     }
     .icon {
       font-size: 2.5rem;

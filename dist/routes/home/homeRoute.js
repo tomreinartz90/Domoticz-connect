@@ -74,7 +74,7 @@ var HomeRoute = (function () {
             selector: 'home-route'
         }),
         core_1.View({
-            template:'<div class=\"row\">\r\n    <ul class=\"vertical medium-horizontal menu\">\r\n        <li *ngFor=\"#plan of devicesByPlan\" ><a (click)=\"setActivePlan(plan.meta.idx)\" class=\"button\" [ngClass]=\"{\'disabled\': plan.meta.idx == activePlan.meta.idx}\">{{plan.meta.Name}}</a></li>\r\n    </ul>\r\n</div>\r\n<device-list [list]=\"activePlan.result\"></device-list>',
+            template:'<div class=\"row\">\r\n    <ul class=\"horizontal medium-horizontal menu\">\r\n        <li *ngFor=\"#plan of devicesByPlan\" ><a (click)=\"setActivePlan(plan.meta.idx)\" class=\"button\" [ngClass]=\"{\'disabled\': plan.meta.idx == activePlan.meta.idx}\">{{plan.meta.Name}}</a></li>\r\n    </ul>\r\n</div>\r\n<device-list [list]=\"activePlan.result\"></device-list>',
             directives: [deviceList_1.DeviceList]
         }), 
         __metadata('design:paramtypes', [domoticzService_1.DomoticzService])

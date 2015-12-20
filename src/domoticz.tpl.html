@@ -10,7 +10,7 @@
         </div>
 
         <div class="off-canvas-content">
-            <div class="top-bar">
+            <div class="top-bar header">
                 <div class="top-bar-left">
                     <button class="menu-icon" type="button" data-open="offCanvasLeft" aria-expanded="false" aria-controls="offCanvasLeft" (click)="toggleoffCanvasLeft()"></button>
                     <span class="menu-text">Domoticz connect</span>
@@ -18,7 +18,9 @@
                 <div class="top-bar-right">
                 </div>
             </div>
-            <router-outlet></router-outlet>
+            <div class="page-content">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>

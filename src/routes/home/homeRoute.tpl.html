@@ -1,5 +1,5 @@
 <div class="row">
-    <ul class="vertical medium-horizontal menu">
+    <ul class="horizontal medium-horizontal menu">
         <li *ngFor="#plan of devicesByPlan" ><a (click)="setActivePlan(plan.meta.idx)" class="button" [ngClass]="{'disabled': plan.meta.idx == activePlan.meta.idx}">{{plan.meta.Name}}</a></li>
     </ul>
 </div>
