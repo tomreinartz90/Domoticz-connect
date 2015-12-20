@@ -9,8 +9,11 @@ export declare class DomoticzService {
     private jsonp;
     private headers;
     constructor(jsonp: Jsonp);
+    getSettingsFromLocalStorage(): void;
+    setUserNameAndPassword(url: string, username: string, password: string): void;
     getAuthHeader(): Headers;
     getAuthorizationHeader(): string;
+    getVersion(): Observable<Response>;
     getAllDevices(): Observable<Response>;
     getAllScenes(): Observable<Response>;
     getAllPlans(): Observable<Response>;

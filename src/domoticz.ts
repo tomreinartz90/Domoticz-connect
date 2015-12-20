@@ -1,6 +1,5 @@
 import {Component, View, provide} from 'angular2/core';
 import {bootstrap} from 'angular2/bootstrap';
-import {MyComponent} from "./components/mycomponent/mycomponent";
 import  {DomoticzService} from "./services/domoticzService/domoticzService"
 import {HTTP_PROVIDERS} from "angular2/http";
 import {Http, Jsonp, JSONP_PROVIDERS} from "angular2/http";

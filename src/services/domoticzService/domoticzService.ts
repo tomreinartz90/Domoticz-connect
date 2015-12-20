@@ -18,6 +18,21 @@ export class DomoticzService {
     constructor (jsonp:Jsonp) {
         console.log('starting service');
         this.jsonp = jsonp;
+        this.getSettingsFromLocalStorage();
+    }
+
+    getSettingsFromLocalStorage () {
+        var settings = JSON.parse( localStorage.getItem('settings') );
+        if(settings !== null)
+            this.username = settings.username;
+        this.password = settings.password;
+        this.domoticzAdress = settings.url;
+    }
+
+    setUserNameAndPassword (url:string, username:string, password:string) {
+        this.domoticzAdress = url;
+        this.username = username;
+        this.password = password;
     }
 
     // todo get header send with request
@@ -28,6 +43,11 @@ export class DomoticzService {
 
     getAuthorizationHeader () {
         return "Basic " + window.btoa(this.username + ":" + this.password);
+    }
+
+    getVersion ():Observable<Response> {
+        //http://nas.tomreinartz.com:81/json.htm?type=command&param=getversion
+        return this.jsonp.get(this.domoticzAdress + '/json.htm?type=command&param=getversion' + this.jsonpCb,{headers: this.getAuthHeader()} );
     }
 
     getAllDevices():Observable<Response> {

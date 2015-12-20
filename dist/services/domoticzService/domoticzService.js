@@ -17,7 +17,20 @@ var DomoticzService = (function () {
         this.jsonpCb = "&jsoncallback=JSONP_CALLBACK";
         console.log('starting service');
         this.jsonp = jsonp;
+        this.getSettingsFromLocalStorage();
     }
+    DomoticzService.prototype.getSettingsFromLocalStorage = function () {
+        var settings = JSON.parse(localStorage.getItem('settings'));
+        if (settings !== null)
+            this.username = settings.username;
+        this.password = settings.password;
+        this.domoticzAdress = settings.url;
+    };
+    DomoticzService.prototype.setUserNameAndPassword = function (url, username, password) {
+        this.domoticzAdress = url;
+        this.username = username;
+        this.password = password;
+    };
     // todo get header send with request
     DomoticzService.prototype.getAuthHeader = function () {
         var authHeader = this.getAuthorizationHeader();
@@ -25,6 +38,10 @@ var DomoticzService = (function () {
     };
     DomoticzService.prototype.getAuthorizationHeader = function () {
         return "Basic " + window.btoa(this.username + ":" + this.password);
+    };
+    DomoticzService.prototype.getVersion = function () {
+        //http://nas.tomreinartz.com:81/json.htm?type=command&param=getversion
+        return this.jsonp.get(this.domoticzAdress + '/json.htm?type=command&param=getversion' + this.jsonpCb, { headers: this.getAuthHeader() });
     };
     DomoticzService.prototype.getAllDevices = function () {
         console.log('getting devices');

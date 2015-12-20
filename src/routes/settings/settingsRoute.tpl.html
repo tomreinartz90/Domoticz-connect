@@ -1,2 +1,24 @@
-Your name: <input type="text" [(ngModel)]="text"/><br/>
-Hello {{text}}
+<form>
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Domoticz Url
+                <input type="url" placeholder="http://192.168.1.192" [(ngModel)]="model.url"
+                       ngControl="url">
+            </label>
+        </div>
+        <div class="small-12 columns">
+            <label>User Name
+                <input type="text" placeholder="Username" [(ngModel)]="model.username"
+                       ngControl="username">
+            </label>
+        </div>
+        <div class="small-12 columns">
+            <label>Password
+                <input type="password" placeholder="Password" [(ngModel)]="model.password"
+                       ngControl="password">
+            </label>
+        </div>
+    </div>
+    {{status.update}}
+    <div class="button expanded" (click)="storeSettings()">Test and save</div>
+</form>
