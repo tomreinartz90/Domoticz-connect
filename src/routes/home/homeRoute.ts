@@ -25,7 +25,6 @@ export class HomeRoute {
     var _this = this;
     this.domoticzSerivice.getAllDevices().subscribe(function(res){
       _this.devices = res.json().result;
-      console.log(res.json().result);
     })
   }
 
@@ -71,7 +70,6 @@ export class HomeRoute {
         mergedPlan.meta = plan;
         mergedPlan.result = res.json().result;
         _this.devicesByPlan.push(mergedPlan);
-        console.log(mergedPlan);
         if(_this.activePlan.meta == null)
           _this.setActivePlan(plan.idx);
 
